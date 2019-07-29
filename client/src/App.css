@@ -31,3 +31,25 @@ opacity: 1;
     box-shadow: -1px 1px 11px 1px rgba(0,0,0,0.87);
     }
 
+/* //buttons */
+
+.specialBtns{
+text-transform: capitalize;
+font-size: 1.4rem;
+background: transparent;
+border: 0.05rem solid var(--lightBlue);
+border-color: blue;
+color: blue;
+border-radius: 0.5rem;
+cursor:pointer;
+margin: 0.2rem 0.5rem 0.2rem 0;
+transition: all 0.5s ease-in-out;
+}
+
+.specialBtns:hover{
+    background:  yellow ;
+    color: blue;
+}
+.specialBtns:focus{
+    outline: none;
+}

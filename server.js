@@ -1,17 +1,23 @@
 const express = require('express');
-const bodyParser = require("body-parser");
 const mongoose = require('mongoose');
+
 const news = require('./routes/api/news');
-// const teams = require('./routes/teams');
+const users = require('./routes/api/users');
+const auth = require('./routes/api/auth');
+
+
+const config = require('config');
 
 const path = require('path');
 
 
 const app = express();
-app.use(bodyParser.json())
+
+
+app.use(express.json());
 
 //db config
-const db = require('./config/keys').mongoURI;
+const db = config.get('mongoURI');
 
 //connect to Mongo
 mongoose
@@ -25,6 +31,8 @@ mongoose
 // using our routes
 
 app.use('/api/news', news);
+app.use('/api/users', users);
+app.use('/api/auth', auth);
 // app.use('/teams', teams);
 
 //serve static assets in production and deploy to heroku

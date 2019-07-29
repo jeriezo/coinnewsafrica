@@ -1,6 +1,7 @@
 const express = require('express');
 //declare the router variable
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 //getting our blog model from the 
 const Blog = require('../../models/Blog');
@@ -13,11 +14,11 @@ router.get('/', (req, res) => {
         .then(news => res.json(news));
 });
 
-//@route POST /blogs
+//@route POST /api/news
 //@desc post new items
-//@access public
+//@access private
 
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
     const newBlog = new Blog({
         title: req.body.title,
         author: req.body.author,
@@ -29,9 +30,9 @@ router.post('/', (req, res) => {
 
 //@route DELETE api/items/:id
 //@desc DELETE EXISTING item
-//@access public
+//@access private
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
     Blog.findById(req.params.id)
         .then(item => blog.remove().then(() => res.json({ success: true })))
         .catch(err => res.status(404).json({ success: false }));

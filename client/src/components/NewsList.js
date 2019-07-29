@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import News from '../components/News';
-import logo from '../logo.svg';
 
 
 class NewsList extends Component {

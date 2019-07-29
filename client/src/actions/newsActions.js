@@ -1,4 +1,8 @@
 import axios from 'axios';
+
+import { tokenConfig } from './authActions';
+import { returnErrors } from './errorActions';
+
 import { GET_NEWS, ADD_NEWS, DELETE_NEWS, NEWS_LOADING } from './types';
 
 export const getNews = () => dispatch => {
@@ -11,7 +15,7 @@ export const getNews = () => dispatch => {
                 type: GET_NEWS,
                 payload: res.data
             }))
-    // .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
 };
 
 export const addNews = (news) => dispatch => {
@@ -22,6 +26,7 @@ export const addNews = (news) => dispatch => {
                 type: ADD_NEWS,
                 payload: res.data
             }))
+        .catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
 };
 
 export const deleteNews = (id) => dispatch => {
@@ -31,7 +36,7 @@ export const deleteNews = (id) => dispatch => {
                 type: DELETE_NEWS,
                 payload: id
             })
-        );
+        ).catch(err => dispatch(returnErrors(err.response.data, err.response.status)));
 };
 
 

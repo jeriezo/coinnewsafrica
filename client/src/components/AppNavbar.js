@@ -10,6 +10,14 @@ import {
 } from 'reactstrap';
 import { ButtonContainer } from './Button';
 
+import RegisterModal from './auth/RegisterModal';
+import LoginModal from './auth/LoginModal';
+import Logout from './auth/Logout';
+// import News from './News';
+
+
+
+
 class AppNavbar extends React.Component {
     constructor(props) {
         super(props);
@@ -33,13 +41,43 @@ class AppNavbar extends React.Component {
                     </NavbarBrand>
                     <Nav className="ml-auto">
                         <NavItem>
-                            <NavLink><ButtonContainer outline color="success">News</ButtonContainer></NavLink>
+                            <NavLink>
+                                <ButtonContainer outline color="success">
+                                    News
+                                </ButtonContainer>
+                            </NavLink>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                             <NavLink><ButtonContainer outline color="success">
                                 Teams
                                     </ButtonContainer></NavLink>
+                        </NavItem> */}
+
+                        <NavItem>
+                            <NavLink>
+                                <ButtonContainer outline color="success">
+                                    <RegisterModal />
+                                </ButtonContainer>
+                            </NavLink>
                         </NavItem>
+
+                        <NavItem>
+                            <NavLink>
+                                <ButtonContainer outline color="success">
+                                    <LoginModal />
+                                </ButtonContainer>
+                            </NavLink>
+                        </NavItem>
+
+                        <NavItem>
+                            <NavLink>
+                                <ButtonContainer outline color="success">
+                                    <Logout />
+                                </ButtonContainer>
+                            </NavLink>
+                        </NavItem>
+
+
                     </Nav>
                 </Navbar>
             </div >

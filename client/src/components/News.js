@@ -52,7 +52,7 @@ class News extends Component {
                                     </Button>
                                         <h5 className="text-muted  float-right">27th May</h5>
                                         <span>
-                                            <img className="rounded-circle float-left" src={image} alt="logo" style={{ width: "2em" }} />
+                                            <img className="rounded-circle float-left" src="https://i.imgur.com/Y9YTof9.png" alt="avatar" style={{ width: "1.2em" }} />
                                             <h6 className="card-title text-muted">{author}</h6>
                                         </span>
                                     </CardHeader>
@@ -60,7 +60,7 @@ class News extends Component {
                                     <CardFooter>
                                         <CardTitle><h5>{title}</h5></CardTitle>
                                         <CardText></CardText>
-                                        <Button color="secondary" block>Button</Button>
+                                        <Button className="specialBtns" color="secondary" block>see more</Button>
                                     </CardFooter>
                                 </Card>
                             </Col>
