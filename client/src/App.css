@@ -1,55 +1,62 @@
-body{
-    background-color:#d9dce0 !important;
+body {
+  background-color: #d9dce0 !important;
 }
 
-.remove-btn{
-    margin-right: 0.5rem;
+.remove-btn {
+  margin-right: 0.5rem;
 }
 
-.fade-enter{
-    opacity: 0.01;
+.fade-enter {
+  opacity: 0.01;
 }
 
-.fade-enter-active{
-opacity: 1;
-transition: opacity 1000ms ease-in;
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
 }
 
-.fade-exit{
-opacity: 1;
+.fade-exit {
+  opacity: 1;
 }
 
-.fade-exit-active{
-    opacity: 0.01;
-    transition: opacity 1000ms ease-in;
-
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 1000ms ease-in;
 }
 
-.shadows{	
-    -webkit-box-shadow: -1px 1px 11px 1px rgba(0,0,0,0.87);
-    -moz-box-shadow: -1px 1px 11px 1px rgba(0,0,0,0.87);
-    box-shadow: -1px 1px 11px 1px rgba(0,0,0,0.87);
-    }
+.shadows {
+  -webkit-box-shadow: -1px 1px 11px 1px rgba(0, 0, 0, 0.87);
+  -moz-box-shadow: -1px 1px 11px 1px rgba(0, 0, 0, 0.87);
+  box-shadow: -1px 1px 11px 1px rgba(0, 0, 0, 0.87);
+}
 
 /* //buttons */
 
-.specialBtns{
-text-transform: capitalize;
-font-size: 1.4rem;
-background: transparent;
-border: 0.05rem solid var(--lightBlue);
-border-color: blue;
-color: blue;
-border-radius: 0.5rem;
-cursor:pointer;
-margin: 0.2rem 0.5rem 0.2rem 0;
-transition: all 0.5s ease-in-out;
+.specialBtns {
+  text-transform: capitalize;
+  font-size: 1.4rem;
+  background: transparent;
+  border: 0.05rem solid var(--lightBlue);
+  border-color: blue;
+  color: blue;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 0.2rem 0.5rem 0.2rem 0;
+  transition: all 0.5s ease-in-out;
 }
 
-.specialBtns:hover{
-    background:  yellow ;
-    color: blue;
+.specialBtns:hover {
+  background: yellow;
+  color: blue;
 }
-.specialBtns:focus{
-    outline: none;
+.specialBtns:focus {
+  outline: none;
+}
+
+.carousel {
+  margin: 6vh 0;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
 }
