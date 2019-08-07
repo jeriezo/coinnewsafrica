@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
-import News from '../components/News';
+import React, { Component, lazy, Suspense } from 'react';
 import LatestNews from '../components/LatestNews';
 import { Container } from 'reactstrap';
+import LoadingBar from '../components/LoadingBar';
+const News = lazy(() => import('../components/News'));
+
 
 class NewsList extends Component {
   render() {
@@ -9,8 +11,10 @@ class NewsList extends Component {
       <React.Fragment>
         <Container>
           <LatestNews />
+          <Suspense fallback={<LoadingBar style={{ display: 'block' }} />}>
+            <News />
+          </Suspense>
         </Container>
-        <News />
       </React.Fragment>
     );
   }

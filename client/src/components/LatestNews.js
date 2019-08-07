@@ -4,7 +4,7 @@ import { UncontrolledCarousel } from 'reactstrap';
 const items = [
   {
     src:
-      'https://banner2.kisspng.com/20180331/bsw/kisspng-logo-brand-font-coming-soon-5abfa76c2c02a1.3844708615225096761803.jpg',
+      'https://banner2.kisspng.com/20180331/bsw/kisspng-logo-brand-font-coming-soon-5abfa76c803.jpg',
     altText: 'Slide 1',
     header: 'Coming Soon'
   },
