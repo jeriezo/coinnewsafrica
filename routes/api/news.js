@@ -5,7 +5,7 @@ const auth = require('../../middleware/auth');
 const Blog = require('../../models/Blog');
 
 router.get('/', (req, res) => {
-    Blog.find()
+    Blog.find().limit(3)
         .sort({ created: -1 })
         .then(news => res.json(news));
 });

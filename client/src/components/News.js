@@ -20,7 +20,7 @@ import PropTypes from 'prop-types';
 class News extends Component {
 
 
-    componentDidMount() {
+    componentWillMount() {
         this.props.getNews();
     }
 
@@ -43,7 +43,7 @@ class News extends Component {
                     <Row>
                         {news.map(({ _id, title, image, author }) => (
                             <Col sm="12" md="6" lg="4">
-                                <Card className="shadows" style={{ marginBottom: "1.2em" }}>
+                                <Card key={_id} className="shadows" style={{ marginBottom: "1.2em" }}>
                                     <CardHeader>
                                         <Button className="remove-btn float-right" color="danger" size="sm" style={{ marginLeft: "1.2em" }}
                                             onClick={this.onDeleteClick.bind(this, _id)
