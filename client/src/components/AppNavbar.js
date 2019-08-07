@@ -8,8 +8,6 @@ import {
     NavLink,
 
 } from 'reactstrap';
-import { ButtonContainer } from './Button';
-
 import RegisterModal from './auth/RegisterModal';
 import LoginModal from './auth/LoginModal';
 import Logout from './auth/Logout';
@@ -42,33 +40,25 @@ class AppNavbar extends React.Component {
                     <Nav className="ml-auto">
                         <NavItem>
                             <NavLink>
-                                <ButtonContainer outline color="success">
-                                    News
-                                </ButtonContainer>
+                                NEWS
                             </NavLink>
                         </NavItem>
 
                         <NavItem>
                             <NavLink>
-                                <ButtonContainer outline color="success">
-                                    <RegisterModal />
-                                </ButtonContainer>
+                                <RegisterModal />
                             </NavLink>
                         </NavItem>
 
                         <NavItem>
                             <NavLink>
-                                <ButtonContainer outline color="success">
-                                    <LoginModal />
-                                </ButtonContainer>
+                                <LoginModal />
                             </NavLink>
                         </NavItem>
 
                         <NavItem>
                             <NavLink>
-                                <ButtonContainer outline color="success">
-                                    <Logout />
-                                </ButtonContainer>
+                                <Logout />
                             </NavLink>
                         </NavItem>
 
