@@ -1,12 +1,11 @@
 import { GET_ERRORS, CLEAR_ERRORS } from '../actions/types';
 
 const initialState = {
-    //these data comes from the server
     msg: {},
     status: null,
     id: null
 }
-export default function (state = initialState, action) {//the action here is the action that comes from the actionsfile
+export default function (state = initialState, action) {
     switch (action.type) {
         case GET_ERRORS:
             return {
@@ -16,7 +15,6 @@ export default function (state = initialState, action) {//the action here is the
             };
         case CLEAR_ERRORS:
             return {
-                //we set everything to empty
                 msg: {},
                 status: null,
                 id: null

@@ -35,16 +35,15 @@ class LoginModal extends Component {
     componentDidUpdate(prevProps) {
         const { error, isAuthenticated } = this.props;
         if (error !== prevProps.error) {
-            //check for register error
             if (error.id === 'LOGIN_FAIL') {
                 this.setState({ msg: error.msg.msg });//from the redux state
             } else {
                 this.setState({ msg: null });
             }
         }
-        // if authenticated close modal
-        if (this.state.modal) {//make sure the modal is open
-            if (isAuthenticated) {//and authenticated
+
+        if (this.state.modal) {
+            if (isAuthenticated) {
                 this.toggle();
             }
         }
@@ -56,8 +55,6 @@ class LoginModal extends Component {
             modal: !this.state.modal
         });
     }
-    //this helps  captures the value entered inside the input and set the state to whatever 
-    //is typed in 
     onChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -66,18 +63,12 @@ class LoginModal extends Component {
     }
 
     onSubmit = e => {
-        //since its a form we need to prevent the normal way the form submits
         e.preventDefault();
-        // get email and password from the component state
         const { email, password } = this.state;
-
-        //create a user object to submit the email and password
         const user = {
             email,
             password
         }
-
-        //attempt to login
         this.props.login(user);
     };
 
@@ -99,7 +90,6 @@ class LoginModal extends Component {
                                 <Label for="email">Email</Label>
                                 <Input
                                     type="email"
-                                    //name is same in the state
                                     name="email"
                                     id=" Email"
                                     placeholder="Email"
@@ -109,7 +99,6 @@ class LoginModal extends Component {
                                 <Label for="password">Password</Label>
                                 <Input
                                     type="password"
-                                    //name is same in the state
                                     name="password"
                                     id="password"
                                     placeholder="Password"
@@ -128,7 +117,7 @@ class LoginModal extends Component {
     }
 }
 
-const mapStateToProps = state => ({//error and auth isgotten from the root reducer
+const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
     error: state.error
 });

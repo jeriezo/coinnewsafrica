@@ -6,7 +6,6 @@ import { returnErrors } from './errorActions';
 import { GET_NEWS, ADD_NEWS, DELETE_NEWS, NEWS_LOADING } from './types';
 
 export const getNews = () => dispatch => {
-    //since we already set the loading is true  
     dispatch(setNewsLoading());
     axios
         .get('/api/news')

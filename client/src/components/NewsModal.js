@@ -12,7 +12,6 @@ import {
 
 import { connect } from 'react-redux';
 import { addNews } from '../actions/newsActions';
-//its good to store ur form input state in your component
 
 class NewsModal extends Component {
     state = {
@@ -29,8 +28,7 @@ class NewsModal extends Component {
             modal: !this.state.modal
         });
     }
-    //this helps  captures the value entered inside the input and set the state to whatever 
-    //is typed in 
+
     onChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
@@ -38,26 +36,18 @@ class NewsModal extends Component {
     }
 
     onSubmit = e => {
-        //since its a form we need to prevent the normal waythe form submits
         e.preventDefault();
 
-        //assigning the new user varialble to the newItem variable
         const newNews = {
             title: this.state.title,
             author: this.state.author,
             image: this.state.image,
             body: this.state.body
         }
-        //add news via addNews action
         this.props.addNews(newNews);;
-
-
-        //close modal
         this.toggle();
 
     }
-
-
     render() {
         return (
             <div>
@@ -78,7 +68,6 @@ class NewsModal extends Component {
                                 <Label for="titleitem"></Label>
                                 <Input
                                     type="text"
-                                    //name is same in the state
                                     name="title"
                                     id="titleitem"
                                     value={this.state.title}
@@ -108,7 +97,6 @@ class NewsModal extends Component {
                                 <Label for="bodyitem"></Label>
                                 <Input
                                     type="text"
-                                    //name is same in the state
                                     name="body"
                                     value={this.state.body}
                                     id="bodyitem"

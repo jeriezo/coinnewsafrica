@@ -47,11 +47,6 @@ class AppNavbar extends React.Component {
                                 </ButtonContainer>
                             </NavLink>
                         </NavItem>
-                        {/* <NavItem>
-                            <NavLink><ButtonContainer outline color="success">
-                                Teams
-                                    </ButtonContainer></NavLink>
-                        </NavItem> */}
 
                         <NavItem>
                             <NavLink>

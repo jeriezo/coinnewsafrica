@@ -52,36 +52,28 @@ class RegisterModal extends Component {
     }
 
     toggle = () => {
-        this.props.clearErrors();//clear errors once the modal closes
+        this.props.clearErrors();
         this.setState({
             modal: !this.state.modal
         });
     }
-    //this helps  captures the value entered inside the input and set the state to whatever 
-    //is typed in 
     onChange = (e) => {
         this.setState({
             [e.target.name]: e.target.value
         });
 
-    }
+    };
 
     onSubmit = e => {
-        //since its a form we need to prevent the normal way the form submits
         e.preventDefault();
-        //get the name ,email and password from the state
         const { name, email, password } = this.state;
-
-        //create user object
         const newUser = {
             name,
             email,
             password
         };
 
-        //attempt to register
         this.props.register(newUser);
-
     }
     render() {
         return (
@@ -100,7 +92,6 @@ class RegisterModal extends Component {
                                 <Label for="name">Name</Label>
                                 <Input
                                     type="text"
-                                    //name is same in the state
                                     name="name"
                                     id=" name"
                                     placeholder="name"
@@ -111,7 +102,6 @@ class RegisterModal extends Component {
                                 <Label for="email">Email</Label>
                                 <Input
                                     type="email"
-                                    //name is same in the state
                                     name="email"
                                     id=" Email"
                                     placeholder="Email"
@@ -121,7 +111,6 @@ class RegisterModal extends Component {
                                 <Label for="password">Password</Label>
                                 <Input
                                     type="password"
-                                    //name is same in the state
                                     name="password"
                                     id="password"
                                     placeholder="Password"
@@ -140,7 +129,7 @@ class RegisterModal extends Component {
     }
 }
 
-const mapStateToProps = state => ({//error and auth is gotten from the root reducer
+const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
     error: state.error
 });

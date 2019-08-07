@@ -10,7 +10,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    token: localStorage.getItem('token'),// getting thee token fromthe local storage
+    token: localStorage.getItem('token'),
     isAuthenticated: null,
     isLoading: false,
     user: null
@@ -20,19 +20,19 @@ export default function (state = initialState, action) {
     switch (action.type) {
         case USER_LOADING:
             return {
-                ...state,//current state
+                ...state,
                 isLoading: true
             };
         case USER_LOADED:
             return {
-                ...state,// current state
+                ...state,
                 isAuthenticated: true,
                 isLoading: false,
-                user: action.payload//sending the user as the payload
+                user: action.payload
             };
         case LOGIN_SUCCESS:
-        case REGISTER_SUCCESS://on both cases we do the below
-            localStorage.setItem('token', action.payload.token);//set the token to localstorage
+        case REGISTER_SUCCESS:
+            localStorage.setItem('token', action.payload.token);
 
             return {
                 ...state,
@@ -43,8 +43,8 @@ export default function (state = initialState, action) {
         case AUTH_ERROR:
         case LOGIN_FAIL:
         case LOGOUT_SUCCESS:
-        case REGISTER_FAIL:// on all 4 we the below
-            localStorage.removeItem('token');//clear the token from the local storage if any of these above cases occur    
+        case REGISTER_FAIL:
+            localStorage.removeItem('token');
 
             return {
                 ...state,
