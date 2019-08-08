@@ -1,12 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { disableReactDevTools } from '@fvilers/disable-react-devtools';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
-if (process.env.NODE_ENV === 'production') {
-    disableReactDevTools();
-}
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
