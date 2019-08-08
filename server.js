@@ -17,15 +17,19 @@ const app = express();
 app.use(express.json());
 
 
-const db = config.get('mongoURI');
-
+const databaseURL = config.get('mongoURI');
+const localDatabaseURL = config.get('localDB');
+const db = databaseURL;
+if (process.env.NODE_ENV === 'development') {
+    db = localDatabaseURL;
+}
 
 mongoose
     .connect(db, {
         useNewUrlParser: true,
         useCreateIndex: true
     })
-    .then(() => console.log('mongo connected'))
+    .then(() => console.log(`server running on port ${db}`))
     .catch(err => console.log(err));
 
 
